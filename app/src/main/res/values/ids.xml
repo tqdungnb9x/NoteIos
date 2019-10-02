@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <item name="imagenotenote0" type="id"/>
+        <item name="edtnotenote0" type="id"/>
+        <item name="imagenotenote1" type="id"/>
+        <item name="edtnotenote1" type="id"/>
+        <item name="imagenotenote2" type="id"/>
+        <item name="edtnotenote2" type="id"/>
+        <item name="imagenotenote3" type="id"/>
+        <item name="edtnotenote3" type="id"/>
+        <item name="imagenotenote4" type="id"/>
+        <item name="edtnotenote4" type="id"/>
+        <item name="imagenotenote5" type="id"/>
+        <item name="edtnotenote5" type="id"/>
+        <item name="imagenotenote6" type="id"/>
+        <item name="edtnotenote6" type="id"/>
+        <item name="imagenotenote7" type="id"/>
+        <item name="edtnotenote7" type="id"/>
+        <item name="imagenotenote8" type="id"/>
+        <item name="edtnotenote8" type="id"/>
+        <item name="imagenotenote9" type="id"/>
+        <item name="edtnotenote9" type="id"/>
+        <item name="imagenotenote10" type="id"/>
+        <item name="edtnotenote10" type="id"/>
+
+
+</resources>
