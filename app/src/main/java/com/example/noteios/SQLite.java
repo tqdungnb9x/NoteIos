@@ -13,20 +13,20 @@ public class SQLite extends SQLiteOpenHelper {
 
 
 
-    private SQLite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
+    SQLite(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(context, name, factory, version);
     }
 
 
     //2 dạng truy vấn :
     // không trả kết quả : CREATE, ...
-        private void QueryData(String sql){
+    void QueryData(String sql){
             SQLiteDatabase db = getWritableDatabase();
             db.execSQL(sql);
         }
 
     //TRẢ KẾT QUẢ : SELECT
-    private Cursor GetData(String sql){ // chuyển con trỏ tới vị trí SQL
+    Cursor GetData(String sql){ // chuyển con trỏ tới vị trí SQL
         SQLiteDatabase db = getWritableDatabase(); // có thể dùng getWrite vừa đọc vừa ghi
         return db.rawQuery(sql, null);
     }
@@ -372,7 +372,7 @@ public class SQLite extends SQLiteOpenHelper {
         }
     }
 
-    private void Delete (long id, Context context){
+    void Delete(long id, Context context){
         SQLiteDatabase db = getWritableDatabase();
         String sql = "DELETE FROM NOTE WHERE Id = ?";
         SQLiteStatement statement = db.compileStatement(sql);
@@ -400,7 +400,7 @@ public class SQLite extends SQLiteOpenHelper {
     }
 
     //ĐẾM TỔNG SỐ GHI CHÚ
-    private int count (){
+    int count(){
         String countQuery = "SELECT * FROM NOTE " ;
         SQLiteDatabase db = this.getReadableDatabase();
 
