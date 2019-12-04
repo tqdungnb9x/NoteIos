@@ -24,5 +24,32 @@
         <item name="imagenotenote10" type="id"/>
         <item name="edtnotenote10" type="id"/>
 
+        <item name="btndelnotenote0" type="id"/>
+        <item name="btndelnotenote1" type="id"/>
+        <item name="btndelnotenote2" type="id"/>
+        <item name="btndelnotenote3" type="id"/>
+        <item name="btndelnotenote4" type="id"/>
+        <item name="btndelnotenote5" type="id"/>
+        <item name="btndelnotenote6" type="id"/>
+        <item name="btndelnotenote7" type="id"/>
+        <item name="btndelnotenote8" type="id"/>
+        <item name="btndelnotenote9" type="id"/>
+        <item name="btndelnotenote10" type="id"/>
+
+    <item name="relativelayoutsub0" type="id"/>
+    <item name="relativelayoutsub1" type="id"/>
+    <item name="relativelayoutsub2" type="id"/>
+    <item name="relativelayoutsub3" type="id"/>
+    <item name="relativelayoutsub4" type="id"/>
+    <item name="relativelayoutsub5" type="id"/>
+    <item name="relativelayoutsub6" type="id"/>
+    <item name="relativelayoutsub7" type="id"/>
+    <item name="relativelayoutsub8" type="id"/>
+    <item name="relativelayoutsub9" type="id"/>
+    <item name="relativelayoutsub10" type="id"/>
+
+
+
+
 
 </resources>

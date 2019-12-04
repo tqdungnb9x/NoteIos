@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/linearlayoutnote"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.noteios.NoteActivity"
-    android:orientation="vertical"
-    tools:showIn="@layout/activity_note">
+    tools:showIn="@layout/activity_note"
+    android:background="@color/colorWhite">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-    <TextClock
-        android:id="@+id/tvtimenotenote"
-        android:format24Hour="E, d-M-yyyy k:m:sa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/edtnotenote"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorWhite"
-        android:background="@color/colorWhite"
-        />
+<!--    <ScrollView-->
+<!--        android:id="@+id/nsview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/llbelow"-->
+<!--        android:layout_above="@+id/ablayout">-->
+<!--        -->
 
-</LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearlayoutnote"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <TextClock
+                android:id="@+id/tvtimenotenote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format24Hour="E, d-M-yyyy k:m:sa"
+                android:text="abc" />
+
+            <EditText
+                android:id="@+id/edtnotenote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="Edit"/>
+
+        </LinearLayout>
+<!--    </ScrollView>-->
+
+</ScrollView>

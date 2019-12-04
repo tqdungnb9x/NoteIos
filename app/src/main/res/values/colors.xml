@@ -6,6 +6,8 @@
     <color name="colorBlack">#000000</color>
     <color name="colorYellow">#FDDD00</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="bgBottomNavigation">#fe485a</color>
+    <color name="colorGray">#C0BCBC</color>
 
 
 
