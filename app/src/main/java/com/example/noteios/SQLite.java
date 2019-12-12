@@ -60,7 +60,7 @@ public class SQLite extends SQLiteOpenHelper {
 //
 //    }
 
-    private void Insert(long id, String time, String text , byte[] image0, String text0, byte[] image1, String text1, byte[] image2, String text2, byte[] image3, String text3, byte[] image4, String text4, byte[] image5, String text5, byte[] image6, String text6, byte[] image7, String text7, byte[] image8, String text8, byte[] image9, String text9, byte[] image10, String text10) {
+    void Insert(long id, String time, String text, byte[] image0, String text0, byte[] image1, String text1, byte[] image2, String text2, byte[] image3, String text3, byte[] image4, String text4, byte[] image5, String text5, byte[] image6, String text6, byte[] image7, String text7, byte[] image8, String text8, byte[] image9, String text9, byte[] image10, String text10) {
         SQLiteDatabase db = getWritableDatabase();
         String sql = "INSERT INTO NOTE VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         SQLiteStatement statement = db.compileStatement(sql);
@@ -243,7 +243,7 @@ public class SQLite extends SQLiteOpenHelper {
 //    }
 
 
-    private void Update (long id, String time, String text , byte[] image0, String text0, byte[] image1, String text1, byte[] image2, String text2, byte[] image3, String text3, byte[] image4, String text4, byte[] image5, String text5, byte[] image6, String text6, byte[] image7, String text7, byte[] image8, String text8, byte[] image9, String text9, byte[] image10, String text10) {
+    void Update(long id, String time, String text, byte[] image0, String text0, byte[] image1, String text1, byte[] image2, String text2, byte[] image3, String text3, byte[] image4, String text4, byte[] image5, String text5, byte[] image6, String text6, byte[] image7, String text7, byte[] image8, String text8, byte[] image9, String text9, byte[] image10, String text10) {
         SQLiteDatabase db = getWritableDatabase();
         String sql = "UPDATE NOTE SET Id = ?, Time = ?, Text = ?, Image0 = ?, Text0 =?, Image1 = ?, Text1 =?, Image2 = ?, Text2 =?, Image3 = ?, Text3 =?, Image4 = ?, Text4 =?, Image5 = ?, Text5 =?, Image6 = ?, Text6 =?, Image7 = ?, Text7 =?, Image8 = ?, Text8 =?, Image9 = ?, Text9 =?, Image10 = ?, Text10 =? WHERE Id = ?";
         SQLiteStatement statement = db.compileStatement(sql);

@@ -72,13 +72,19 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
 //    EditText edtnotenote9;
 //    EditText edtnotenote10;
 
-    RelativeLayout.LayoutParams layoutRelative;
+//    RelativeLayout.LayoutParams layoutRelative;
+//    RelativeLayout.LayoutParams layoutImage;
+//    RelativeLayout.LayoutParams layoutEdit;
+//    RelativeLayout.LayoutParams layoutButton;
+//    LinearLayout.LayoutParams layoutLinear;
+    LinearLayout.LayoutParams layoutRelative;
     RelativeLayout.LayoutParams layoutImage;
-    RelativeLayout.LayoutParams layoutEdit;
+    LinearLayout.LayoutParams layoutEdit;
     RelativeLayout.LayoutParams layoutButton;
 
     ImageView [] arrayimage = new ImageView[11];
     EditText [] arrayedt = new EditText[11];
+//    LinearLayout[] arraylinear = new LinearLayout[11];
     RelativeLayout [] arrayrelative = new RelativeLayout[11];
     ImageButton [] arraybtn = new ImageButton[11];
 
@@ -86,6 +92,7 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
     int [] arrayidimage = {R.id.imagenotenote0,R.id.imagenotenote1,R.id.imagenotenote2,R.id.imagenotenote3,R.id.imagenotenote4,R.id.imagenotenote5,R.id.imagenotenote6,R.id.imagenotenote7,R.id.imagenotenote8,R.id.imagenotenote9,R.id.imagenotenote10};
     int [] arrayidbtn = {R.id.btndelnotenote0,R.id.btndelnotenote1,R.id.btndelnotenote2,R.id.btndelnotenote3,R.id.btndelnotenote4,R.id.btndelnotenote5,R.id.btndelnotenote6,R.id.btndelnotenote7,R.id.btndelnotenote8,R.id.btndelnotenote9,R.id.btndelnotenote10};
     int [] arrayidrelative = {R.id.relativelayoutsub0,R.id.relativelayoutsub1,R.id.relativelayoutsub2,R.id.relativelayoutsub3,R.id.relativelayoutsub4,R.id.relativelayoutsub5,R.id.relativelayoutsub6,R.id.relativelayoutsub7,R.id.relativelayoutsub8,R.id.relativelayoutsub9,R.id.relativelayoutsub10};
+//    int [] arrayidlinear = {R.id.linearlayoutsub0,R.id.linearlayoutsub1,R.id.linearlayoutsub2,R.id.linearlayoutsub3,R.id.linearlayoutsub4,R.id.linearlayoutsub5,R.id.linearlayoutsub6,R.id.linearlayoutsub7,R.id.linearlayoutsub8,R.id.linearlayoutsub9,R.id.linearlayoutsub10};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -133,6 +140,18 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
         arrayrelative[9] = new RelativeLayout(this);
         arrayrelative[10] = new RelativeLayout(this);
 
+//        arraylinear[0] = new LinearLayout(this);
+//        arraylinear[1] = new LinearLayout(this);
+//        arraylinear[2] = new LinearLayout(this);
+//        arraylinear[3] = new LinearLayout(this);
+//        arraylinear[4] = new LinearLayout(this);
+//        arraylinear[5] = new LinearLayout(this);
+//        arraylinear[6] = new LinearLayout(this);
+//        arraylinear[7] = new LinearLayout(this);
+//        arraylinear[8] = new LinearLayout(this);
+//        arraylinear[9] = new LinearLayout(this);
+//        arraylinear[10] = new LinearLayout(this);
+
         arraybtn[0] = new ImageButton(this);
         arraybtn[1] = new ImageButton(this);
         arraybtn[2] = new ImageButton(this);
@@ -150,15 +169,13 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
         mangtamthoi = new ListNoteData(null,null,null);
 
 
-        layoutRelative = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
+        layoutRelative = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        layoutLinear = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutImage = new RelativeLayout.LayoutParams(500, 500);
         layoutImage.setMargins(20,20,20,20);
         layoutImage.addRule(RelativeLayout.CENTER_HORIZONTAL);
-
         layoutButton = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-        layoutEdit = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutEdit = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
 
         //DB
@@ -460,12 +477,15 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
             if(arrayrelative[i] != null) {
                 arrayrelative[i].removeAllViews();
                 ((ViewGroup)linearlayoutnote).removeView(arrayrelative[i]); // <- fix
+                ((ViewGroup)linearlayoutnote).removeView(arrayedt[i]); // <- fix
             }
+//            arraylinear[i].setId(arrayidlinear[i]);
             arrayrelative[i].setId(arrayidrelative[i]);
             arrayimage[i].setId(arrayidimage[i]);
             arrayedt[i].setId(arrayidedit[i]);
             arraybtn[i].setId(arrayidbtn[i]);
 
+//            arraylinear[i].setLayoutParams(layoutLinear);
             arrayrelative[i].setLayoutParams(layoutRelative);
             arrayimage[i].setLayoutParams(layoutImage);
             arrayedt[i].setLayoutParams(layoutEdit);
@@ -474,16 +494,19 @@ public class NoteActivity<actionBar> extends AppCompatActivity {
             arraybtn[i].setImageResource(R.drawable.ic_close);
             layoutButton.addRule(RelativeLayout.ALIGN_PARENT_RIGHT,arrayidimage[i]);
             layoutButton.addRule(RelativeLayout.ALIGN_PARENT_TOP,arrayidimage[i]);
-            layoutEdit.addRule(RelativeLayout.BELOW,arrayidimage[i]);
+//            layoutEdit.addRule(RelativeLayout.BELOW,arrayidimage[i]);
 
             arrayimage[i].setImageBitmap(photo);
             arrayedt[i].getBackground().mutate().setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_ATOP);
+//            arrayedt[i].setMinLines(2);
             arrayedt[i].setHint("Edit1");
 
+
+//            linearlayoutnote.addView(arraylinear[i]);
             linearlayoutnote.addView(arrayrelative[i]);
             arrayrelative[i].addView(arrayimage[i]);
             arrayrelative[i].addView(arraybtn[i]);
-            arrayrelative[i].addView(arrayedt[i]);
+            linearlayoutnote.addView(arrayedt[i]);
 
             countview++;
             arraybtn[i].setOnClickListener(new View.OnClickListener() {
