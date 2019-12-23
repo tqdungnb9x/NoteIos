@@ -1,31 +1,20 @@
 package com.example.noteios;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -61,6 +50,7 @@ public class MainActivity<actionBar> extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("Ghi chú");
+        //getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
 
         AnhXa();
 
@@ -82,7 +72,8 @@ public class MainActivity<actionBar> extends AppCompatActivity {
         final SQLite db = new SQLite(getApplicationContext(), "Note.sqlite", null, 1);
 
 //        Tạo table
-        db.QueryData("CREATE TABLE IF NOT EXISTS NOTE ( Id INTEGER,Time VARCHAR, Text VARCHAR, Image BLOB )");
+        db.QueryData("CREATE TABLE IF NOT EXISTS NOTE ( Id INTEGER, Time VARCHAR, Text VARCHAR, Image0 BLOB, Text0 VARCHAR, Image1 BLOB, Text1 VARCHAR, Image2 BLOB, Text2 VARCHAR, Image3 BLOB, Text3 VARCHAR, Image4 BLOB, Text4 VARCHAR, Image5 BLOB, Text5 VARCHAR, Image6 BLOB, Text6 VARCHAR, Image7 BLOB, Text7 VARCHAR, Image8 BLOB, Text8 VARCHAR, Image9 BLOB, Text9 VARCHAR, Image10 BLOB, Text10 VARCHAR )");
+//        db.QueryData("CREATE TABLE IF NOT EXISTS NOTE ( Id INTEGER, Time VARCHAR, Text VARCHAR, Image BLOB )");
 
         //        //dòng này để text sql, làm xong nhớ xóa
 //        db.QueryData("INSERT INTO NOTE VALUES (null,'10:10','abc' ,null)");
@@ -220,7 +211,7 @@ public class MainActivity<actionBar> extends AppCompatActivity {
 
     public void LoadDataList (SQLite db){
         ArrayList<ListNoteData> mang = new ArrayList<ListNoteData>();
-        Cursor note = db.GetData("SELECT * FROM NOTE");
+        Cursor note = db.GetData("SELECT * FROM NOTE ORDER BY Id ASC");
         if(note.getCount() != 0){
             note.moveToLast();
             do{
